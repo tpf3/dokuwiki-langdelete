@@ -420,8 +420,10 @@ class admin_plugin_langdelete extends DokuWiki_Admin_Plugin {
             }
         }
         foreach ($l['plugins'] as $plug => $arr) {
-            foreach ($arr as $lang) {
-                $count[$lang]++;
+            if (is_array($arr)) {
+                foreach ($arr as $lang) {
+                    $count[$lang]++;
+                }
             }
         }
 
